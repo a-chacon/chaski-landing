@@ -1,4 +1,4 @@
-<section>
+<section id="faq">
   <div
     class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 scroll-mt-12"
   >
@@ -33,7 +33,7 @@
             @click="setActiveAccordion(id)"
             class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
           >
-            <span>How does end-to-end encryption work?</span>
+            <span>What is Chaski?</span>
             <svg
               class="w-5 h-5 duration-300 ease-out text-accent-500 -rotate-[45deg]"
               :class="{ '-rotate-[45deg]': activeAccordion==id }"
@@ -50,11 +50,7 @@
           </button>
           <div x-show="activeAccordion==id" x-collapse="">
             <div class="p-4 pt-2 text-zinc-500">
-              End-to-end encryption ensures that only the sender and recipient
-              can access the content of a message. The information is encrypted
-              on the sender's device and can only be decrypted by the intended
-              recipient, preventing any intermediaries, including the platform
-              provider, from accessing the data.
+              Chaski is a privacy-focused, minimalist feed reader that allows you to consume content without ads, algorithms, or tracking. It lets you choose what you read, how you read it, and when—on your own terms.
             </div>
           </div>
         </div>
@@ -68,7 +64,7 @@
             class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
           >
             <span
-              >Can I access my encrypted data if I forget my encryption key?</span
+              >How does Chaski respect my privacy?</span
             >
             <svg
               class="w-5 h-5 duration-300 ease-out text-accent-500"
@@ -90,11 +86,150 @@
             style="display: none;"
           >
             <div class="p-4 pt-2 text-zinc-500">
-              No, forgetting or losing your encryption key means that your
-              encrypted data cannot be accessed. This is a crucial security
-              measure to ensure that even if someone gains unauthorized access
-              to your account, they won't be able to decrypt and view your
-              messages or files.
+              Chaski does not collect any personal data, track your activity, or serve ads. Everything happens locally on your device, so you can enjoy reading without interruptions or privacy concerns.
+            </div>
+          </div>
+        </div>
+        <div
+          x-data="{ id: $id('accordion') }"
+          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
+          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
+        >
+          <button
+            @click="setActiveAccordion(id)"
+            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+          >
+          <span>
+            Can I sync my feeds across multiple devices? 
+          </span>
+            <svg
+              class="w-5 h-5 duration-300 ease-out text-accent-500"
+              :class="{ '-rotate-[45deg]': activeAccordion==id }"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m6-6H6"></path></svg
+            >
+          </button>
+          <div
+            x-show="activeAccordion==id"
+            x-collapse=""
+            style="display: none;"
+          >
+            <div class="p-4 pt-2 text-zinc-500">
+              Currently, Chaski does not support native sync across devices. However, this is a feature we plan to introduce soon, first through third-party services like Feeder, and eventually with native support.
+            </div>
+          </div>
+        </div>
+        <div
+          x-data="{ id: $id('accordion') }"
+          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
+          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
+        >
+          <button
+            @click="setActiveAccordion(id)"
+            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+          >
+            <span>
+              Can I migrate my feeds from another RSS reader to Chaski?
+            </span
+            >
+            <svg
+              class="w-5 h-5 duration-300 ease-out text-accent-500"
+              :class="{ '-rotate-[45deg]': activeAccordion==id }"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m6-6H6"></path></svg
+            >
+          </button>
+          <div
+            x-show="activeAccordion==id"
+            x-collapse=""
+            style="display: none;"
+          >
+            <div class="p-4 pt-2 text-zinc-500">
+              Yes! Chaski supports importing and exporting OPML files, which is compatible with most major feed readers. Simply export your feeds from your current service and import them into Chaski.
+            </div>
+          </div>
+        </div>
+        <div
+          x-data="{ id: $id('accordion') }"
+          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
+          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
+        >
+          <button
+            @click="setActiveAccordion(id)"
+            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+          >
+            <span>
+              Does Chaski have an app for mobile devices? 
+            </span>
+            <svg
+              class="w-5 h-5 duration-300 ease-out text-accent-500"
+              :class="{ '-rotate-[45deg]': activeAccordion==id }"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m6-6H6"></path></svg
+            >
+          </button>
+          <div
+            x-show="activeAccordion==id"
+            x-collapse=""
+            style="display: none;"
+          >
+            <div class="p-4 pt-2 text-zinc-500">
+              At the moment, Chaski is available for Windows, macOS, and Linux. We do not have a mobile app yet, but it is something we're considering for the future. Stay tuned!
+            </div>
+          </div>
+        </div>
+        <div
+          x-data="{ id: $id('accordion') }"
+          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
+          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
+        >
+          <button
+            @click="setActiveAccordion(id)"
+            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+          >
+            <span>How is Chaski funded?</span>
+            <svg
+              class="w-5 h-5 duration-300 ease-out text-accent-500"
+              :class="{ '-rotate-[45deg]': activeAccordion==id }"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m6-6H6"></path></svg
+            >
+          </button>
+          <div
+            x-show="activeAccordion==id"
+            x-collapse=""
+            style="display: none;"
+          >
+            <div class="p-4 pt-2 text-zinc-500">
+              Chaski is a personal side project I created to learn Rust. It's open-source and free to use. If you enjoy the app and want to support its development, you can buy me a coffee! Feedback and contributions are also always welcome.
             </div>
           </div>
         </div>
@@ -108,8 +243,7 @@
             class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
           >
             <span
-              >Are there any limitations to the self-destructing messages
-              feature?</span
+              >I can't install Chaski on macOS, what should I do?</span
             >
             <svg
               class="w-5 h-5 duration-300 ease-out text-accent-500"
@@ -131,12 +265,7 @@
             style="display: none;"
           >
             <div class="p-4 pt-2 text-zinc-500">
-              Self-destructing messages are designed to automatically delete
-              themselves after a specific period or upon being read by the
-              recipient. However, it's important to note that the feature only
-              removes the message from the devices involved in the conversation.
-              Recipients may take screenshots or use other means to capture the
-              content, which is beyond the platform's control.
+              Currently, Chaski isn't fully tested or signed for macOS, as I don't have the required hardware for testing. If you can try the app on macOS and provide feedback, it would be much appreciated! Please note that you may encounter security warnings since the app is not signed.
             </div>
           </div>
         </div>
@@ -149,10 +278,7 @@
             @click="setActiveAccordion(id)"
             class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
           >
-            <span
-              >What happens if I enable two-factor authentication and lose my
-              device?</span
-            >
+            <span>I get a warning when installing on Windows, what is it?</span>
             <svg
               class="w-5 h-5 duration-300 ease-out text-accent-500"
               :class="{ '-rotate-[45deg]': activeAccordion==id }"
@@ -173,166 +299,7 @@
             style="display: none;"
           >
             <div class="p-4 pt-2 text-zinc-500">
-              Losing your device doesn't automatically compromise your account's
-              security. It's recommended to contact our support team as soon as
-              possible to disable the two-factor authentication on your lost
-              device and set up the authentication on your new device. This
-              process will help protect your account from unauthorized access
-              while ensuring you can regain access to it.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span
-              >Is my personal information shared or sold to third parties?</span
-            >
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-500">
-              No, we strictly adhere to a privacy-centric approach. Your
-              personal information is never shared, sold, or monetized. We
-              prioritize your privacy and ensure that your data remains
-              confidential and only accessible to you.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span>Can I use this platform on multiple devices?</span>
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-500">
-              Yes, you can access our platform on multiple devices. Your
-              encrypted data remains synced across all devices, allowing you to
-              seamlessly communicate and access your files and messages from
-              anywhere.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span
-              >Are there any storage limitations for files and documents?</span
-            >
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-500">
-              Our platform provides ample storage space for your files and
-              documents. However, there may be storage limitations based on the
-              pricing plan you choose. We offer flexible plans to suit your
-              needs and provide options to upgrade if you require additional
-              storage capacity.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-black': activeAccordion==id, 'text-zinc-600 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-600 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span>Is it possible to export my data from the platform?</span>
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-500">
-              Yes, you can export your data from the platform. We offer export
-              features that allow you to download your messages, files, and
-              documents, ensuring you have a local copy for backup or migration
-              purposes. It provides you with greater control and flexibility
-              over your data.
+              On Windows, you might see a warning because Chaski is not digitally signed. This happens because it’s an open-source project and not distributed through official channels like the Microsoft Store. You can still install it, just be sure to download it from the GitHub releases.
             </div>
           </div>
         </div>
