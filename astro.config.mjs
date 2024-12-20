@@ -6,6 +6,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://chaski.a-chacon.com',
+  site: 'https://a-chacon.com',
   integrations: [sitemap()]
 });
