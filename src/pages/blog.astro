@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+---
+<BaseLayout>
+  <section class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 px-8 py-24">
+    <h1 class="text-4xl tracking-tight font-semibold text-black md:text-5xl font-display mb-8">
+      Chaski Blog
+    </h1>
+    
+    <div class="space-y-12">
+      {blogPosts.map((post) => (
+        <article class="group">
+          <a href={`/blog/${post.slug}/`} class="block">
+            {post.data.image && (
+              <img 
+                src={post.data.image.url} 
+                alt={post.data.image.alt} 
+                class="w-full h-64 object-cover rounded-lg mb-4"
+              />
+            )}
+            <h2 class="text-2xl font-semibold text-gray-900 group-hover:text-accent-600 transition-colors">
+              {post.data.title}
+            </h2>
+            <p class="text-gray-500 mt-2">
+              {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </p>
+            <p class="text-gray-600 mt-2">
+              {post.data.description}
+            </p>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
